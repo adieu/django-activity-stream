@@ -74,6 +74,8 @@ class Action(models.Model):
     action_object_object_id = models.CharField(max_length=255,blank=True,null=True)
     action_object = generic.GenericForeignKey('action_object_content_type','action_object_object_id')
 
+    performed_by = models.ForeignKey(User,blank=True,null=True)
+
     timestamp = models.DateTimeField(default=datetime.now)
 
     public = models.BooleanField(default=True)

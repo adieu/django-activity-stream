@@ -90,6 +90,7 @@ def action_handler(verb, **kwargs):
                     verb = unicode(verb),
                     public = bool(kwargs.pop('public', True)),
                     description = kwargs.pop('description', None),
+                    performed_by = kwargs.pop('performed_by', None),
                     timestamp = kwargs.pop('timestamp', datetime.now()))
 
     for opt in ('target', 'action_object'):
